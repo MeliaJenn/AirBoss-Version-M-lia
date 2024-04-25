@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Sunny';
+    src: url('SunnySpellsBasic.ttf') format('truetype');
+}
+  
+/*-------------------Page d'accueil-------------------*/
+body {
+    background-color: #3a84b9;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Sunny';
+    letter-spacing: 2px;
+}
+
+h1 {
+    position: absolute;
+    bottom: 10px; /* Réglez cette valeur selon vos préférences */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+.images-accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.titre-airboss{
+    transition: transform 0.3s, filter 0.3s;
+    margin-top: -60px;
+}
+
+.play{
+    transition: transform 0.3s, filter 0.3s;
+    margin-top: 20px;
+}
+
+.images-accueil .play:active {
+    transform: scale(0.8);
+    filter: brightness(80%);
+}
+
+/*-------------------sign-up / login-------------------*/
