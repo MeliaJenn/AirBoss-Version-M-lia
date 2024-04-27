@@ -15,13 +15,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="style-accueil.css" />
+    <link rel="stylesheet" href="../css/style-accueil.css" />
   </head>
   <body>
     <a class="images-accueil" href="accueil.html">
       <img
         class="titre-airboss"
-        src="images/logo.png"
+        src="../images/logo.png"
         alt="Logo du jeu avec l'inscription Air boss."
       />
     </a>
@@ -41,12 +41,12 @@
                     <h4 class="mb-4 pb-3">Se connecter</h4>
                     <div class="form-group">
                       <input
-                        type="email"
+                        type="text"
                         class="form-style"
-                        placeholder="Email"
+                        placeholder="Surnom"
                         required
                       />
-                      <i class="input-icon uil uil-at"></i>
+                      <i class="input-icon uil uil-user"></i>
                     </div>
                     <div class="form-group mt-2">
                       <input
@@ -57,11 +57,17 @@
                       />
                       <i class="input-icon uil uil-lock-alt"></i>
                     </div>
+                    <!--
                     <a href="air-boss.html" class="btn mt-4">Se connecter</a>
                     <p class="mb-0 mt-4 text-center">
                       <a href="air-boss.html" class="link"
                         >J'ai oublié mon mot de passe</a
                       >
+                    -->
+                    <button id="login-button" class="btn mt-4">Se connecter</button>
+                    <p class="mb-0 mt-4 text-center">
+                      <a href="#" id="forgot-password-link" class="link">J'ai oublié mon mot de passe</a>
+                    </p>
                     </p>
                   </div>
                 </div>
@@ -84,7 +90,6 @@
                         type="email"
                         class="form-style"
                         placeholder="Email"
-                        required
                       />
                       <i class="input-icon uil uil-at"></i>
                     </div>
@@ -106,9 +111,12 @@
                       />
                       <i class="input-icon uil uil-lock-alt"></i>
                     </div>
+                    <!--
                     <a href="air-boss.html" class="btn mt-4"
                       >Créer mon compte</a
                     >
+                    -->
+                    <button id="signup-button" class="btn mt-4">Créer mon compte</button>
                   </div>
                 </div>
               </div>
@@ -117,5 +125,6 @@
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
