@@ -30,11 +30,6 @@ app.post('/', (req, res) => {
 
 // Récupération des informations d'un utilisateur 
 app.get('/', (req, res) => {
-  /*
-    - Ici le plus simple ai que tu ai un backend le plus petit possible (qui gère juste les requêtes SQL), tu peux faire comme ça :
-    - Coté frontend, tu envoie une requete GET avec l'email de l'utilisateur que tu veux récupérer et le backend te renvoie les informations de l'utilisateur
-    - Une fois que le frontend connais l'utilisateur présumé, il verrifie que le mot de passe est correcte
-   */
   const surnom = req.query.surnom;
   const query = `
       SELECT * FROM utilisateurs

@@ -162,6 +162,9 @@ display: none;
 .form-style::placeholder {
   color: #ffffff; /* Remplacez #yourDesiredColor par la couleur de votre choix */
 }
+.form-style:not(:placeholder-shown) {
+  font-family: "Times New Roman", Times, serif; /* Police du texte écrit */
+}
 .input-icon {
   position: absolute;
   top: 0;

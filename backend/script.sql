@@ -18,7 +18,7 @@ CREATE TABLE jeu (
 
 
 /*
-Création de/ Connexion à la bdd : ouvrir un terminal et taper sqlite3 bdd.db
+Création de/ Connexion à la bdd : ouvrir un terminal et taper sqlite3 bdd_airboss.db
 Cela ouvre une console sqlite3.
 Executer un script (ex pour la creation des tables) : .read script.sql
 Voir les tables : .tables
