@@ -47,12 +47,3 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
-
-//Créer un fichier package.json : npm init et tout valider
-//Installer les dépendances express et sqlite3
-//npm i express
-//npm i sqplite3
-//npm start pour lancer le serveur ou bien dirrectement node index.js
-//installer nodemon permettant de ne pas avoir a relancer le serveur a chaque modification du backend : 
-//sudo npm install -g nodemon
-//lui donner le fichier a lancer à chaque fois que l'on desir lancer le serveur : nodemon index.js

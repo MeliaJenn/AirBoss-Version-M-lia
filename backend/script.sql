@@ -14,13 +14,3 @@ CREATE TABLE utilisateurs (
 CREATE TABLE jeu (
     id INTEGER PRIMARY KEY AUTOINCREMENT
 );
-
-
-
-/*
-Création de/ Connexion à la bdd : ouvrir un terminal et taper sqlite3 bdd_airboss.db
-Cela ouvre une console sqlite3.
-Executer un script (ex pour la creation des tables) : .read script.sql
-Voir les tables : .tables
-Quitter la console : .quit
-*/
