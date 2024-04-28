@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: #3a84b9;
+    background-image: url('../images/bg_niveau1.png');
+    background-position: left center;
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: 'Sunny';
