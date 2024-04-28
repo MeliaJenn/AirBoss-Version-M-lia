@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Sunny';
+    src: url('../SunnySpellsBasic.ttf') format('truetype');
+}
+
+body {
+    background-color: #3a84b9;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Sunny';
+    letter-spacing: 2px;
+}
+
+/*Piste d'atterissage*/
+.images-accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.piste_atterissage{
+    transition: transform 0.3s, filter 0.3s;
+    margin-top: -60px;
+}
+
+/* Avion */
+.plane {
+    position: absolute;
+    width: 85px;
+    height: auto;
+    transition: top 0.3s, left 0.3s;
+}
+
+
+/* Menu */
+.menu {
+    position: absolute;
+    padding: 10px;
+    border: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Boutons dans le menu */
+.menu .button {
+    width: 70px;
+    height: auto;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right: 10px;
+}
+
