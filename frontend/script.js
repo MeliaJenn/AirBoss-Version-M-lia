@@ -66,11 +66,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 mot_de_passe: password
             })
         })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP, statut : ${response.status}`);
+                }
+                window.location.href = "choix_partie.html";
+            })
             .catch((error) => {
-                alert(`Le surnom "${surnom}" existe déjà !`);
+                alert(`Le surnom "${surnom} est déjà utilisé"`);
                 return;
             })
-        window.location.href = "choix_partie.html";
+        //window.location.href = "choix_partie.html";
     });
 
 
