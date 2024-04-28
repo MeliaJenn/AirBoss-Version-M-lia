@@ -140,8 +140,8 @@ function createPlane() {
         menu.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (menu.offsetWidth / 2)) + 'px';
 
         // Mise à jour de la position de l'image de sélection pour suivre l'avion
-        imgSelection.style.top = (plane.offsetTop - imgSelection.offsetHeight) + 'px';
-        imgSelection.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (imgSelection.offsetWidth / 2)) + 'px';
+        imgSelection.style.top = (plane.offsetTop - imgSelection.clientHeight) + 'px';
+        imgSelection.style.left = (plane.offsetLeft + (plane.clientWidth / 2) - (imgSelection.clientWidth / 2)) + 'px';
 
 
 

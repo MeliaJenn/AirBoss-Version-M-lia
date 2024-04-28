@@ -21,6 +21,7 @@ function createPlane() {
     const menu = document.createElement('div');
     menu.classList.add('menu');
 
+
     // Création des boutons dans le menu
     const button1 = document.createElement('img');
     button1.src = '../images/commande_tour.png';
@@ -38,7 +39,7 @@ function createPlane() {
     });
     menu.appendChild(button2);
 
-    // Création de l'image de sélection
+    // Création de l'image de selection ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
     const imgSelection = document.createElement('img');
     imgSelection.src = '../images/selection.png';
     imgSelection.classList.add('imgSelection');
@@ -46,19 +47,33 @@ function createPlane() {
         event.preventDefault(); // Empêche le glisser-déposer par défaut
     });
 
-    // Ajout de l'avion, du menu et de l'image de sélection au conteneur
+    // Ajout de l'avion et de son menu au conteneur
     const container = document.querySelector('.container');
     container.appendChild(plane);
     container.appendChild(menu);
-    container.appendChild(imgSelection);
+    container.appendChild(imgSelection);//ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
-    // Cacher le menu et l'image de sélection initialement
+    // Cacher le menu initialement
     menu.style.display = 'none';
+
+    // Cacher l'image de selection initialement ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
     imgSelection.style.display = 'none';
 
-    // Gestionnaire d'événements pour afficher le menu et l'image de sélection au clic sur l'avion ou sur imgSelection
-    function toggleMenuAndSelection(event) {
-        // Masquer tous les menus et images de sélection sauf ceux de l'élément cliqué
+    //de laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    // Gestionnaire d'événements pour afficher le menu au clic sur l'avion ou sur imgSelection
+    plane.addEventListener('click', toggleMenu);
+    imgSelection.addEventListener('click', toggleMenu);
+
+    // Gestionnaire d'événements pour masquer le menu au clic en dehors de l'avion, de imgSelection et du menu
+    window.addEventListener('click', function (event) {
+        if (event.target !== plane && event.target !== menu && event.target !== imgSelection) {
+            menu.style.display = 'none';
+        }
+    });
+
+    // Fonction pour basculer l'affichage du menu
+    function toggleMenu(event) {
+        // Masquer tous les menus sauf celui de l'élément cliqué
         const menus = document.querySelectorAll('.menu');
         menus.forEach(function (otherMenu) {
             if (otherMenu !== menu) {
@@ -66,29 +81,11 @@ function createPlane() {
             }
         });
 
-        const imgSelections = document.querySelectorAll('.imgSelection');
-        imgSelections.forEach(function (otherImgSelection) {
-            if (otherImgSelection !== imgSelection) {
-                otherImgSelection.style.display = 'none';
-            }
-        });
-
-        // Afficher le menu et l'image de sélection de l'élément cliqué
+        // Afficher le menu de l'élément cliqué
         menu.style.display = 'block';
-        imgSelection.style.display = 'block';
         event.stopPropagation(); // Empêcher la propagation de l'événement click vers la fenêtre
     }
-
-    plane.addEventListener('click', toggleMenuAndSelection);
-    imgSelection.addEventListener('click', toggleMenuAndSelection);
-
-    // Gestionnaire d'événements pour masquer le menu au clic en dehors de l'avion, de imgSelection et du menu
-    window.addEventListener('click', function (event) {
-        if (event.target !== plane && event.target !== menu && event.target !== imgSelection) {
-            menu.style.display = 'none';
-            imgSelection.style.display = 'none';
-        }
-    });
+    //à laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
     // Gestionnaire d'événements pour empêcher l'effet de glisser-déposer sur l'image de l'avion
     plane.addEventListener('mousedown', function (event) {
@@ -139,10 +136,9 @@ function createPlane() {
         menu.style.top = (plane.offsetTop - menu.offsetHeight) + 'px';
         menu.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (menu.offsetWidth / 2)) + 'px';
 
-        // Mise à jour de la position de l'image de sélection pour suivre l'avion
-        imgSelection.style.top = (plane.offsetTop - imgSelection.offsetHeight) + 'px';
-        imgSelection.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (imgSelection.offsetWidth / 2)) + 'px';
-
+        // Mise à jour de la position de l'image de selection pour suivre l'avion ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+        imgSelection.style.top = (plane.offsetTop - menu.offsetHeight) + 'px';
+        imgSelection.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (menu.offsetWidth / 2)) + 'px';
 
 
     }, 50); // Réduire l'intervalle de temps pour un mouvement plus fluide (50 ms)

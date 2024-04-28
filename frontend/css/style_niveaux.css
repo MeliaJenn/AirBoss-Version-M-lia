@@ -22,6 +22,7 @@ body {
 .piste_atterissage{
     transition: transform 0.3s, filter 0.3s;
     margin-top: -60px;
+    z-index: -2;
 }
 
 /* Avion */
@@ -30,6 +31,7 @@ body {
     width: 85px;
     height: auto;
     transition: top 0.3s, left 0.3s;
+    cursor: pointer;
 }
 
 
@@ -52,5 +54,15 @@ body {
     border: none;
     background: none;
     margin-right: 10px;
+}
+.imgSelection {
+    position: absolute;
+    border: none;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    margin-top: 92px;
+    width: 100px;
+    height: auto;
 }
 

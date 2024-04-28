@@ -56,7 +56,7 @@ function createPlane() {
     menu.style.display = 'none';
     imgSelection.style.display = 'none';
 
-    // Gestionnaire d'événements pour afficher le menu et l'image de sélection au clic sur l'avion ou sur imgSelection
+    // Gestionnaire d'événements pour afficher le menu et l'image de sélection au clic sur l'avion
     function toggleMenuAndSelection(event) {
         // Masquer tous les menus et images de sélection sauf ceux de l'élément cliqué
         const menus = document.querySelectorAll('.menu');
@@ -76,15 +76,16 @@ function createPlane() {
         // Afficher le menu et l'image de sélection de l'élément cliqué
         menu.style.display = 'block';
         imgSelection.style.display = 'block';
+        imgSelection.style.top = (plane.offsetTop - imgSelection.clientHeight) + 'px';
+        imgSelection.style.left = (plane.offsetLeft + (plane.clientWidth / 2) - (imgSelection.clientWidth / 2)) + 'px';
         event.stopPropagation(); // Empêcher la propagation de l'événement click vers la fenêtre
     }
 
     plane.addEventListener('click', toggleMenuAndSelection);
-    imgSelection.addEventListener('click', toggleMenuAndSelection);
 
-    // Gestionnaire d'événements pour masquer le menu au clic en dehors de l'avion, de imgSelection et du menu
+    // Gestionnaire d'événements pour masquer le menu au clic en dehors de l'avion, du menu et de l'image de sélection
     window.addEventListener('click', function (event) {
-        if (event.target !== plane && event.target !== menu && event.target !== imgSelection) {
+        if (event.target !== plane && event.target !== menu) {
             menu.style.display = 'none';
             imgSelection.style.display = 'none';
         }
@@ -140,11 +141,8 @@ function createPlane() {
         menu.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (menu.offsetWidth / 2)) + 'px';
 
         // Mise à jour de la position de l'image de sélection pour suivre l'avion
-        imgSelection.style.top = (plane.offsetTop - imgSelection.offsetHeight) + 'px';
-        imgSelection.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (imgSelection.offsetWidth / 2)) + 'px';
-
-
-
+        imgSelection.style.top = (plane.offsetTop - imgSelection.clientHeight) + 'px';
+        imgSelection.style.left = (plane.offsetLeft + (plane.offsetWidth / 2) - (imgSelection.clientWidth / 2)) + 'px';
     }, 50); // Réduire l'intervalle de temps pour un mouvement plus fluide (50 ms)
 }
 
