@@ -12,6 +12,20 @@ body {
     letter-spacing: 2px;
 }
 
+/*menu header montrant l'avancée du jeux*/
+.menu-header {
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 450px;
+}
+.checkpoint{
+    position: absolute;
+    top: 570px;
+    left: 815px;
+}
+
+
 /*Piste d'atterissage*/
 .images-accueil {
     display: flex;
